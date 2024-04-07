@@ -33,7 +33,11 @@ These instructions will get you a copy of the project up and running on your loc
 Clone the repository to your local machine:
 
 
-git clone https://github.com/StavLidor/Currency.git 
+git clone [https://github.com/StavLidor/Currency.git ](https://github.com/StavLidor/CurrencyExchange.git)
+
+## Using Chrome WebDriver
+
+This project uses Selenium WebDriver with ChromeDriver to automate browser actions for fetching data from websites. Chrome WebDriver is essential for running tests that require browser interaction.
 
 ### Running the Services
 
