@@ -4,6 +4,7 @@ namespace ReadCurrency
     {
         private readonly ILogger<Worker> _logger;
         private readonly ICurrencyRateReadService _currencyRateReadService;
+        private const int ONE_MINUTE_IN_MILLISECONDS = 60000;
 
         public Worker(ILogger<Worker> logger, ICurrencyRateReadService currencyRateReadService)
         {
@@ -29,7 +30,7 @@ namespace ReadCurrency
                 }
                 
                 
-                Thread.Sleep(60000);
+                Thread.Sleep(ONE_MINUTE_IN_MILLISECONDS);
 
                 await Task.Delay(1000, stoppingToken);
             }

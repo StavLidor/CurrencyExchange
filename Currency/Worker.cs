@@ -7,6 +7,7 @@ namespace Currency
     {
         private readonly ILogger<Worker> _logger;
         private readonly ICurrencyRateUpdaterService _currencyRateUpdaterService;
+        private const int ONE_MINUTE = 1;
         
 
         public Worker(ILogger<Worker> logger, ICurrencyRateUpdaterService currencyRateUpdaterService)
@@ -17,7 +18,7 @@ namespace Currency
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _currencyRateUpdaterService.Start(TimeSpan.FromMinutes(1));
+            _currencyRateUpdaterService.Start(TimeSpan.FromMinutes(ONE_MINUTE));
 
             stoppingToken.Register(() => _currencyRateUpdaterService.Stop());
 
